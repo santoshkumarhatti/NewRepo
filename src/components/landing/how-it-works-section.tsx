@@ -9,17 +9,17 @@ const steps = [
   {
     icon: <MousePointerSquareDashed className="h-10 w-10 text-primary" />,
     title: "Choose Your Course",
-    description: "Browse our extensive catalog and select the course that aligns with your career goals."
+    description: "Browse our extensive catalog and select the course that aligns with your career goals and current skill level."
   },
   {
     icon: <Laptop className="h-10 w-10 text-primary" />,
     title: "Learn Anywhere, Anytime",
-    description: "Access high-quality video lessons, practical exercises, and resources on any device."
+    description: "Access high-quality video lessons, practical exercises, and supplementary resources on any device at your own pace."
   },
   {
     icon: <BadgeCheck className="h-10 w-10 text-primary" />,
     title: "Get Certified & Recognized",
-    description: "Complete your course, earn a valuable certificate, and showcase your new skills to employers."
+    description: "Complete your course, earn a valuable certificate, and confidently showcase your newly acquired skills to employers."
   }
 ];
 
@@ -47,7 +47,7 @@ export function HowItWorksSection() {
                   <CardTitle className="text-2xl font-semibold text-primary">{step.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <p className="text-muted-foreground line-clamp-3">{step.description}</p>
                 </CardContent>
               </AnimatedSection>
               {index < steps.length - 1 && (

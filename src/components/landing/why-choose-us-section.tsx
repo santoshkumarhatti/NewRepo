@@ -1,4 +1,5 @@
-import { Award, Briefcase, Brain, Users, TrendingUp, ShieldCheck, Clock, UsersRound } from 'lucide-react';
+
+import { Brain, ShieldCheck, UsersRound, Briefcase, Clock, TrendingUp } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -41,7 +42,7 @@ export function WhyChooseUsSection() {
     <AnimatedSection id="why-us" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Why PrimeLeapInstitute?"
+          title="Why Prime Leap Institute?"
           subtitle="We're not just another online course platform. We are your partners in building a resilient and successful career in the rapidly evolving digital landscape."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -51,14 +52,14 @@ export function WhyChooseUsSection() {
               as={Card} 
               className="shadow-lg hover:shadow-xl transition-shadow duration-300"
               animation="fadeInUp"
-              delay={`delay-${index * 100}`} // Stagger animation
+              delay={`delay-${index * 100}`}
             >
               <CardHeader className="flex flex-row items-center space-x-4 pb-3">
                 {feature.icon}
                 <CardTitle className="text-xl font-semibold text-primary">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-muted-foreground line-clamp-3">{feature.description}</p>
               </CardContent>
             </AnimatedSection>
           ))}
