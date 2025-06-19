@@ -27,14 +27,13 @@ export default function CheckoutPage() {
 
     const courseTitleText = course.title || 'Selected Course';
     const courseDescriptionText = course.description || 'Quality online course';
-    const dynamicPaymentDescription = `${courseTitleText} - ${courseDescriptionText.substring(0, 70)}${courseDescriptionText.length > 70 ? '...' : ''}`;
-
+    
     const razorpayOptions = {
       key: razorpayKeyId,
       amount: course.price * 100, 
       currency: "USD",
-      name: "Prime Leap Institute", // This is your merchant name
-      description: dynamicPaymentDescription, // Dynamic description of the item being purchased
+      name: courseTitleText, // Course name as the primary display
+      description: `${courseDescriptionText.substring(0, 150)}${courseDescriptionText.length > 150 ? '...' : ''}`, // Course description
       image: "/logo-placeholder.png", 
       // order_id: "ORDER_ID_FROM_YOUR_SERVER", // For a full, secure integration, an order_id should be generated on your server.
       handler: function (response: any) {
@@ -123,3 +122,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+
