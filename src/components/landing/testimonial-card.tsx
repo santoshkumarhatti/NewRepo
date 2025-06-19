@@ -12,14 +12,17 @@ interface TestimonialCardProps {
 }
 
 export function TestimonialCard({ quote, name, role, country, imageUrl, imageHint }: TestimonialCardProps) {
+  const words = quote.split(' ');
+  const truncatedQuote = words.slice(0, 12).join(' ');
+  const displayQuote = words.length > 12 ? `${truncatedQuote}...` : truncatedQuote;
+
   return (
     <Card className="h-full flex flex-col bg-card shadow-lg rounded-lg">
       <CardContent className="p-6 flex-grow">
         <p
           className="text-foreground text-sm line-clamp-3 mb-4"
-          style={{ minHeight: 'calc(3 * 1.25rem)' }} 
         >
-          {quote}
+          {displayQuote}
         </p>
       </CardContent>
       <CardFooter className="p-6 pt-4 mt-auto border-t border-border flex items-center space-x-4">
