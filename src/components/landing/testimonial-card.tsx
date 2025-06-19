@@ -13,7 +13,7 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ quote, name, role, country, imageUrl, imageHint }: TestimonialCardProps) {
   return (
-    <Card className="flex flex-col bg-card shadow-lg rounded-lg">
+    <Card className="flex flex-col bg-card shadow-lg rounded-lg w-80 md:w-96 h-full">
       <CardContent className="p-6 flex-grow">
         <p
           className="text-foreground text-sm mb-4"

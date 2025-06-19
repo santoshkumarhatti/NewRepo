@@ -37,12 +37,18 @@ const testimonials = [
     country: "Australia",
     imageUrl: "https://placehold.co/100x100.png",
     imageHint: "developer"
+  },
+  {
+    quote: "The instructors are top-notch, and the community is very supportive. I've learned so much and feel much more confident in my skills.",
+    name: "Aisha R.",
+    role: "UX Designer",
+    country: "India",
+    imageUrl: "https://placehold.co/100x100.png",
+    imageHint: "designer woman"
   }
 ];
 
 export function TestimonialsSection() {
-  const displayedTestimonials = testimonials.slice(0, 3);
-
   return (
     <AnimatedSection id="testimonials" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -50,14 +56,14 @@ export function TestimonialsSection() {
           title="Success Stories from Our Students"
           subtitle="Hear from professionals who transformed their careers with Prime Leap Institute."
         />
-        <div className="max-w-2xl mx-auto space-y-8">
-          {displayedTestimonials.map((testimonial, index) => (
+        <div className="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
+          {testimonials.map((testimonial, index) => (
              <AnimatedSection
                 key={index}
                 as="div"
-                className="w-full" 
                 animation="fadeInUp"
                 delay={`delay-${index * 100}`}
+                className="flex-shrink-0" 
               >
                 <TestimonialCard {...testimonial} />
               </AnimatedSection>
