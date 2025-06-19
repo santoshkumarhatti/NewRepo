@@ -41,7 +41,7 @@ export function WhyChooseUsSection() {
     <AnimatedSection id="why-us" className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <SectionTitle
-          title="Why FutureProof Academy?"
+          title="Why PrimeLeapInstitute?"
           subtitle="We're not just another online course platform. We are your partners in building a resilient and successful career in the rapidly evolving digital landscape."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

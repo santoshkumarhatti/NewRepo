@@ -23,12 +23,12 @@ export async function generateMetadata(
 
   if (!course) {
     return {
-      title: 'Course Not Found - FutureProof Academy',
+      title: 'Course Not Found - PrimeLeapInstitute',
     }
   }
 
   return {
-    title: `${course.title} - FutureProof Academy`,
+    title: `${course.title} - PrimeLeapInstitute`,
     description: course.description.substring(0, 160), 
   }
 }

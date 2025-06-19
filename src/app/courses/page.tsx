@@ -8,8 +8,8 @@ import { AnimatedSection } from '@/components/shared/animated-section';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'All Courses - FutureProof Academy',
-  description: 'Explore all courses offered by FutureProof Academy to upskill and secure your future.',
+  title: 'All Courses - PrimeLeapInstitute',
+  description: 'Explore all courses offered by PrimeLeapInstitute to upskill and secure your future.',
 };
 
 export default function AllCoursesPage() {

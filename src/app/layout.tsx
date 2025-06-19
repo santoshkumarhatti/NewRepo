@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'FutureProof Academy - Upskill and Secure Your Future',
-  description: 'Don’t Let AI Replace You — Upskill Today with FutureProof Academy. Offering expert-led courses in AI, Digital Marketing, Productivity, and more to future-proof your career.',
+  title: 'PrimeLeapInstitute - Upskill and Secure Your Future',
+  description: 'Don’t Let AI Replace You — Upskill Today with PrimeLeapInstitute. Offering expert-led courses in AI, Digital Marketing, Productivity, and more to future-proof your career.',
 };
 
 export default function RootLayout({

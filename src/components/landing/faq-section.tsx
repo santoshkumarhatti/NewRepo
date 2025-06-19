@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: "Do I get a certificate upon completion?",
-    answer: "Yes, upon successful completion of a course, you will receive a verifiable certificate from FutureProof Academy to showcase your new skills on your resume and LinkedIn profile."
+    answer: "Yes, upon successful completion of a course, you will receive a verifiable certificate from PrimeLeapInstitute to showcase your new skills on your resume and LinkedIn profile."
   }
 ];
 

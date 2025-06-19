@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
-import { TrustBadgeIcon } from '@/components/icons/trust-badge-icon'; // Assuming you have this icon
+import { TrustBadgeIcon } from '@/components/icons/trust-badge-icon'; 
 
 export function FinalCtaSection() {
   return (
@@ -12,7 +12,7 @@ export function FinalCtaSection() {
           Secure Your Future — Before It’s Too Late
         </h2>
         <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-primary-foreground/90">
-          Join the 20,000+ professionals who’ve already taken control and future-proofed their careers with FutureProof Academy.
+          Join the 20,000+ professionals who’ve already taken control and future-proofed their careers with PrimeLeapInstitute.
         </p>
         
         <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
