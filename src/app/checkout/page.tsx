@@ -15,6 +15,75 @@ export default function CheckoutPage() {
   const courseId = searchParams.get('courseId');
   const course = courseId ? getCourseBySlug(courseId) : null;
 
+  const handlePayment = () => {
+    if (!course) {
+      alert('Please select a course first to proceed with payment.');
+      return;
+    }
+
+    const razorpayKeyId = 'rzp_live_eCTHZLuHrmbmE1'; // Your provided Razorpay Key ID
+
+    // --- Conceptual Razorpay Integration ---
+    // In a real Razorpay integration:
+    // 1. Ensure Razorpay SDK script is loaded: <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    //    (Typically added in your main layout file or loaded dynamically).
+    // 2. Create an 'order' on your backend server using Razorpay's Orders API (with your secret key)
+    //    to get an 'order_id'. This is crucial for security and proper payment tracking.
+    // 3. Initialize Razorpay checkout on the client-side with that 'order_id' and your 'key_id'.
+
+    const conceptualRazorpayOptions = {
+      key: razorpayKeyId,
+      amount: course.price * 100, // Amount in the smallest currency unit (e.g., paise for INR)
+      currency: "INR", // Or your preferred currency
+      name: "Prime Leap Institute",
+      description: `Purchase of ${course.title}`,
+      image: "/logo-placeholder.png", // Replace with your actual logo URL
+      // order_id: "ORDER_ID_GENERATED_ON_YOUR_SERVER", // This would come from your backend
+      handler: function (response: any) {
+        // This function is called after payment is successful
+        alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}\nTransaction details would be sent to your server for verification.`);
+        // You would then verify the payment signature on your backend and fulfill the order.
+        // Example: router.push(`/payment-success?order_id=${response.razorpay_order_id}`);
+      },
+      prefill: {
+        // name: "Customer Name", // Optional: Prefill user's name
+        // email: "customer@example.com", // Optional: Prefill user's email
+        // contact: "9999999999", // Optional: Prefill user's contact
+      },
+      notes: {
+        course_slug: course.slug,
+        course_id: course.id, // Assuming your course object has an 'id' field
+      },
+      theme: {
+        color: "#3F51B5", // Your primary theme color (Deep Blue)
+      },
+    };
+
+    // This is a placeholder for actual Razorpay SDK initialization.
+    // In a real app, you would check if (window as any).Razorpay is loaded.
+    // if ((window as any).Razorpay) {
+    //   const rzp = new (window as any).Razorpay(conceptualRazorpayOptions);
+    //   rzp.on('payment.failed', function (response: any) {
+    //     alert(`Payment failed: ${response.error.description}\nCode: ${response.error.code}`);
+    //   });
+    //   rzp.open();
+    // } else {
+    //   alert("Razorpay SDK not found. This is a conceptual demonstration for prototyping.");
+    // }
+
+    alert(
+      `This is where Razorpay checkout would be initiated with:\n` +
+      `Key ID: ${razorpayKeyId}\n` +
+      `Course: ${course.title}\n` +
+      `Price: ${course.price} ${conceptualRazorpayOptions.currency}\n` +
+      `Amount (in smallest unit): ${conceptualRazorpayOptions.amount}\n\n` +
+      `A full integration requires loading the Razorpay SDK and server-side order creation to get an 'order_id'.\n\n` +
+      `Conceptual Options (also logged to console):`
+    );
+    console.log("Conceptual Razorpay Checkout Options:", conceptualRazorpayOptions);
+  };
+
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -37,20 +106,14 @@ export default function CheckoutPage() {
                     Course Price: <span className="font-semibold text-foreground ml-1">${course.price.toFixed(2)}</span>
                   </p>
                   <p className="text-sm text-muted-foreground text-center">
-                    This is where your Razorpay integration would go. 
-                    Clicking the button below will take you to the payment page.
+                    Click the button below to proceed with a conceptual Razorpay payment.
+                    A full integration requires the Razorpay SDK and server-side setup.
                   </p>
                   <Button
-                    asChild
+                    onClick={handlePayment}
                     className="w-full bg-accent hover:bg-accent/80 text-accent-foreground"
                   >
-                    <a
-                      href="YOUR_RAZORPAY_PAYMENT_LINK_HERE" // Replace this with your actual Razorpay payment link
-                      target="_blank" // Opens the link in a new tab
-                      rel="noopener noreferrer" // Recommended for security when using target="_blank"
-                    >
-                      Proceed to Payment with Razorpay
-                    </a>
+                    Proceed to Payment with Razorpay
                   </Button>
                 </div>
               ) : (
