@@ -59,7 +59,7 @@ export function WhyChooseUsSection() {
                 <CardTitle className="text-xl font-semibold text-primary">{feature.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground line-clamp-3">{feature.description}</p>
+                <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
             </AnimatedSection>
           ))}

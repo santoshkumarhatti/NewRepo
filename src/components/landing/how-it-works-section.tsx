@@ -47,7 +47,7 @@ export function HowItWorksSection() {
                   <CardTitle className="text-2xl font-semibold text-primary">{step.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground line-clamp-3">{step.description}</p>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </CardContent>
               </AnimatedSection>
               {index < steps.length - 1 && (

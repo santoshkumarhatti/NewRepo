@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -31,7 +32,7 @@ export function CourseCard({ title, description, imageUrl, imageHint, category, 
       <CardContent className="flex-grow p-6">
         <Badge variant="secondary" className="mb-2">{category}</Badge>
         <CardTitle className="text-xl font-semibold text-primary mb-2">{title}</CardTitle>
-        <CardDescription className="text-muted-foreground text-sm line-clamp-3">{description}</CardDescription>
+        <CardDescription className="text-muted-foreground text-sm">{description}</CardDescription>
       </CardContent>
       <CardFooter className="p-6 pt-0">
         <Button asChild variant="outline" className="w-full text-primary hover:bg-primary/10">

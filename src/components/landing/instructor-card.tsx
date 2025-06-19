@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Linkedin, Globe } from 'lucide-react';
@@ -30,7 +31,7 @@ export function InstructorCard({ name, title, bio, imageUrl, imageHint, linkedin
         <CardDescription className="text-accent font-medium">{title}</CardDescription>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="text-muted-foreground text-sm line-clamp-4">{bio}</p>
+        <p className="text-muted-foreground text-sm">{bio}</p>
       </CardContent>
       <div className="p-6 pt-0 mt-auto">
         <div className="flex justify-center space-x-3">
