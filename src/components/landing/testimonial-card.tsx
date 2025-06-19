@@ -1,7 +1,6 @@
 
 import Image from 'next/image';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Quote } from 'lucide-react';
 
 interface TestimonialCardProps {
   quote: string;
@@ -16,8 +15,7 @@ export function TestimonialCard({ quote, name, role, country, imageUrl, imageHin
   return (
     <Card className="h-full flex flex-col bg-card shadow-lg rounded-lg">
       <CardContent className="p-6 flex-grow"> 
-        <Quote className="h-8 w-8 text-primary/50 mb-4" />
-        <p className="text-foreground text-sm line-clamp-2">
+        <p className="text-foreground text-sm line-clamp-2 mb-4">
           {quote}
         </p>
       </CardContent>
@@ -41,3 +39,4 @@ export function TestimonialCard({ quote, name, role, country, imageUrl, imageHin
     </Card>
   );
 }
+
