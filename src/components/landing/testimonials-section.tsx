@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useRef, useEffect } from 'react';
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { SectionTitle } from '@/components/shared/section-title';
 import { TestimonialCard } from './testimonial-card';
@@ -49,6 +50,50 @@ const testimonials = [
 ];
 
 export function TestimonialsSection() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollSpeed = 0.5; // Adjust for speed: lower is slower, higher is faster
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let animationFrameId: number;
+    let isHovering = false;
+
+    const scrollContent = () => {
+      if (!isHovering && container) {
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth -1) {
+          // Optional: Instant reset for a continuous loop effect,
+          // or gradually scroll back. For now, simple reset.
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += scrollSpeed;
+        }
+      }
+      animationFrameId = requestAnimationFrame(scrollContent);
+    };
+
+    const handleMouseEnter = () => {
+      isHovering = true;
+    };
+
+    const handleMouseLeave = () => {
+      isHovering = false;
+    };
+
+    animationFrameId = requestAnimationFrame(scrollContent);
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (container) {
+        container.removeEventListener('mouseenter', handleMouseEnter);
+        container.removeEventListener('mouseleave', handleMouseLeave);
+      }
+    };
+  }, [scrollSpeed]);
+
   return (
     <AnimatedSection id="testimonials" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -56,7 +101,10 @@ export function TestimonialsSection() {
           title="Success Stories from Our Students"
           subtitle="Hear from professionals who transformed their careers with Prime Leap Institute."
         />
-        <div className="flex overflow-x-auto space-x-6 pb-4 no-scrollbar">
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto space-x-6 pb-4 no-scrollbar"
+        >
           {testimonials.map((testimonial, index) => (
              <AnimatedSection
                 key={index}
