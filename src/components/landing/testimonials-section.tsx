@@ -51,7 +51,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollSpeed = 0.5; // Adjust for speed: lower is slower, higher is faster
+  const scrollSpeed = 0.5; 
 
   useEffect(() => {
     const container = scrollContainerRef.current;
@@ -63,8 +63,6 @@ export function TestimonialsSection() {
     const scrollContent = () => {
       if (!isHovering && container) {
         if (container.scrollLeft >= container.scrollWidth - container.clientWidth -1) {
-          // Optional: Instant reset for a continuous loop effect,
-          // or gradually scroll back. For now, simple reset.
           container.scrollLeft = 0;
         } else {
           container.scrollLeft += scrollSpeed;
@@ -109,9 +107,9 @@ export function TestimonialsSection() {
              <AnimatedSection
                 key={index}
                 as="div"
-                animation="fadeInUp"
+                animation="fadeIn" 
                 delay={`delay-${index * 100}`}
-                className="flex-shrink-0" 
+                className="flex-shrink-0"
               >
                 <TestimonialCard {...testimonial} />
               </AnimatedSection>
