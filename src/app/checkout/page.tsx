@@ -133,6 +133,7 @@ export default function CheckoutPage() {
             slug: course.slug,
             title: course.title,
             price: course.price,
+            description: course.description,
           },
           user: {
             name: userName,
@@ -290,3 +291,4 @@ export default function CheckoutPage() {
     </div>
   );
 }
+
