@@ -28,9 +28,9 @@ export default function CheckoutPage() {
     const razorpayOptions = {
       key: razorpayKeyId,
       amount: course.price * 100, 
-      currency: "USD", // Changed to USD
+      currency: "USD",
       name: "Prime Leap Institute",
-      description: `Purchase of ${course.title}`,
+      description: `${course.title} - ${course.description.substring(0, 70)}${course.description.length > 70 ? '...' : ''}`,
       image: "/logo-placeholder.png", 
       // order_id: "ORDER_ID_FROM_YOUR_SERVER", // For a full, secure integration, an order_id should be generated on your server.
       handler: function (response: any) {
@@ -44,9 +44,10 @@ export default function CheckoutPage() {
       },
       notes: {
         course_slug: course.slug,
+        course_title: course.title,
       },
       theme: {
-        color: "#3F51B5", 
+        color: "#3F51B5", // This is an example theme color, you can adjust
       },
     };
 
