@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -61,7 +62,7 @@ export function Navbar() {
               </Link>
             ))}
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground w-full">
-              <Link href="#final-cta" onClick={() => setIsMenuOpen(false)}>
+              <Link href="#courses" onClick={() => setIsMenuOpen(false)}>
                 Start Learning <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
