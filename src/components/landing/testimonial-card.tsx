@@ -16,8 +16,8 @@ export function TestimonialCard({ quote, name, role, country, imageUrl, imageHin
     <Card className="h-full flex flex-col bg-card shadow-lg rounded-lg">
       <CardContent className="p-6 flex-grow">
         <p
-          className="text-foreground text-sm line-clamp-2 mb-4"
-          style={{ minHeight: 'calc(2 * 1.25rem)' }} 
+          className="text-foreground text-sm line-clamp-1 mb-4"
+          style={{ minHeight: 'calc(1 * 1.25rem)' }} 
         >
           {quote}
         </p>
@@ -40,3 +40,4 @@ export function TestimonialCard({ quote, name, role, country, imageUrl, imageHin
     </Card>
   );
 }
+
