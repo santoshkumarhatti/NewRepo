@@ -4,8 +4,6 @@
 import { AnimatedSection } from '@/components/shared/animated-section';
 import { SectionTitle } from '@/components/shared/section-title';
 import { TestimonialCard } from './testimonial-card';
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
-
 
 const testimonials = [
   {
@@ -35,6 +33,8 @@ const testimonials = [
 ];
 
 export function TestimonialsSection() {
+  const displayedTestimonials = testimonials.slice(0, 3);
+
   return (
     <AnimatedSection id="testimonials" className="py-16 md:py-24 bg-secondary">
       <div className="container mx-auto px-4">
@@ -42,23 +42,18 @@ export function TestimonialsSection() {
           title="Success Stories from Our Students"
           subtitle="Hear from professionals who transformed their careers with FutureProof Academy."
         />
-        <div className="relative">
-          <ScrollArea className="w-full whitespace-nowrap pb-4">
-            <div className="flex w-max space-x-6">
-              {testimonials.map((testimonial, index) => (
-                 <AnimatedSection
-                    key={index}
-                    as="div"
-                    className="w-[350px] md:w-[400px]" // Card width
-                    animation="fadeInUp"
-                    delay={`delay-${index * 100}`}
-                  >
-                    <TestimonialCard {...testimonial} />
-                  </AnimatedSection>
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
+        <div className="max-w-2xl mx-auto space-y-8">
+          {displayedTestimonials.map((testimonial, index) => (
+             <AnimatedSection
+                key={index}
+                as="div"
+                className="w-full" 
+                animation="fadeInUp"
+                delay={`delay-${index * 100}`}
+              >
+                <TestimonialCard {...testimonial} />
+              </AnimatedSection>
+          ))}
         </div>
       </div>
     </AnimatedSection>
