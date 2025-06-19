@@ -60,8 +60,6 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                 <Badge variant="secondary" className="mb-3 text-sm">{course.category}</Badge>
                 <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">{course.title}</h1>
                 <p className="text-lg text-muted-foreground mb-6">
-                  This is a more detailed placeholder description. For a real application, this would be much longer and provide comprehensive information about the course content, learning outcomes, prerequisites, instructor details, and more. 
-                  <br/><br/>
                   {course.description}
                 </p>
                 
