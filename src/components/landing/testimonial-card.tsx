@@ -15,11 +15,11 @@ interface TestimonialCardProps {
 export function TestimonialCard({ quote, name, role, country, imageUrl, imageHint }: TestimonialCardProps) {
   return (
     <Card className="h-full flex flex-col justify-between bg-card shadow-lg p-6 rounded-lg">
-      <CardContent className="p-0">
+      <CardContent className="p-0 flex-grow">
         <Quote className="h-8 w-8 text-primary/50 mb-4" />
-        <p className="text-foreground italic mb-6 text-md break-words">&ldquo;{quote}&rdquo;</p>
+        <p className="text-foreground italic mb-6 text-md break-words line-clamp-3">{quote}</p>
       </CardContent>
-      <div className="flex items-center mt-auto">
+      <div className="flex items-center mt-auto pt-4 border-t border-border">
         <div className="relative h-14 w-14 rounded-full overflow-hidden mr-4 shrink-0">
           <Image
             src={imageUrl}
