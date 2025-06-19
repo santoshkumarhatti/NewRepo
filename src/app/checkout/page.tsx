@@ -23,31 +23,30 @@ export default function CheckoutPage() {
       return;
     }
 
-    const razorpayKeyId = 'rzp_live_eCTHZLuHrmbmE1'; // Your provided Razorpay Key ID
+    const razorpayKeyId = 'rzp_live_eCTHZLuHrmbmE1'; 
 
     const razorpayOptions = {
       key: razorpayKeyId,
-      amount: course.price * 100, // Amount in the smallest currency unit (e.g., paise for INR)
-      currency: "INR",
+      amount: course.price * 100, 
+      currency: "USD", // Changed to USD
       name: "Prime Leap Institute",
       description: `Purchase of ${course.title}`,
-      image: "/logo-placeholder.png", // Replace with your actual logo URL. Ensure this path is correct.
+      image: "/logo-placeholder.png", 
       // order_id: "ORDER_ID_FROM_YOUR_SERVER", // For a full, secure integration, an order_id should be generated on your server.
       handler: function (response: any) {
         alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}\nFor a real app, you would now verify this payment on your server and then grant access to the course.`);
         // Example: router.push(`/payment-success?payment_id=${response.razorpay_payment_id}&order_id=${response.razorpay_order_id}`);
       },
       prefill: {
-        // name: "Customer Name", // Optional: Prefill user's name
-        // email: "customer@example.com", // Optional: Prefill user's email
-        // contact: "9999999999", // Optional: Prefill user's contact
+        // name: "Customer Name", 
+        // email: "customer@example.com", 
+        // contact: "9999999999", 
       },
       notes: {
         course_slug: course.slug,
-        // You can add other relevant info here, e.g., user_id if the user is logged in
       },
       theme: {
-        color: "#3F51B5", // Your primary theme color (Deep Blue from original globals.css)
+        color: "#3F51B5", 
       },
     };
 
@@ -86,10 +85,7 @@ export default function CheckoutPage() {
                     <Tag className="mr-2 h-5 w-5 text-accent" />
                     Course Price: <span className="font-semibold text-foreground ml-1">${course.price.toFixed(2)}</span>
                   </p>
-                  <p className="text-sm text-muted-foreground text-center">
-                    Click the button below to proceed with Razorpay payment.
-                    For a production app, server-side order creation and payment verification are recommended.
-                  </p>
+                  
                   <Button
                     onClick={handlePayment}
                     className="w-full bg-accent hover:bg-accent/80 text-accent-foreground"
