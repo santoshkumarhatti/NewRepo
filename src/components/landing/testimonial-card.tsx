@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -12,17 +11,13 @@ interface TestimonialCardProps {
 }
 
 export function TestimonialCard({ quote, name, role, country, imageUrl, imageHint }: TestimonialCardProps) {
-  const words = quote.split(' ');
-  const truncatedQuote = words.slice(0, 12).join(' ');
-  const displayQuote = words.length > 12 ? `${truncatedQuote}...` : truncatedQuote;
-
   return (
-    <Card className="h-full flex flex-col bg-card shadow-lg rounded-lg">
+    <Card className="flex flex-col bg-card shadow-lg rounded-lg"> {/* Removed h-full */}
       <CardContent className="p-6 flex-grow">
         <p
           className="text-foreground text-sm line-clamp-3 mb-4"
         >
-          {displayQuote}
+          {quote}
         </p>
       </CardContent>
       <CardFooter className="p-6 pt-4 mt-auto border-t border-border flex items-center space-x-4">
