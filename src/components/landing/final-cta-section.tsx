@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -13,9 +14,7 @@ export function FinalCtaSection() {
         <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-primary-foreground/90">
           Join the 20,000+ professionals who’ve already taken control and future-proofed their careers with FutureProof Academy.
         </p>
-        <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-xl px-10 py-7 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300">
-          Start Your Journey Today <ArrowRight className="ml-3 h-6 w-6" />
-        </Button>
+        
         <div className="mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
           <div className="flex items-center space-x-2 text-primary-foreground/80">
             <TrustBadgeIcon className="h-7 w-7 text-green-400" />
