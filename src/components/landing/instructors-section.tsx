@@ -8,7 +8,7 @@ const instructors = [
     name: "Dr. Alex Chen",
     title: "Lead AI Instructor, Ex-Google AI Researcher",
     bio: "Dr. Chen brings over 15 years of experience in AI and Machine Learning from Silicon Valley, passionate about making complex tech accessible.",
-    imageUrl: "https://placehold.co/150x150/EFEFEF/AAAAAA.png",
+    imageUrl: "https://placehold.co/150x150.png",
     imageHint: "AI expert male",
     linkedinUrl: "#",
     websiteUrl: "#"
@@ -17,7 +17,7 @@ const instructors = [
     name: "Maria Rodriguez",
     title: "Digital Marketing Strategist, Forbes 30 Under 30",
     bio: "Maria has led successful campaigns for Fortune 500 companies and startups alike, specializing in data-driven marketing strategies.",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/999999.png",
+    imageUrl: "https://placehold.co/150x150.png",
     imageHint: "marketing expert female",
     linkedinUrl: "#"
   },
@@ -25,7 +25,7 @@ const instructors = [
     name: "David Miller",
     title: "Productivity Coach & Remote Work Specialist",
     bio: "David helps professionals and teams optimize their workflows and thrive in remote environments, backed by years of practical experience.",
-    imageUrl: "https://placehold.co/150x150/D0D0D0/888888.png",
+    imageUrl: "https://placehold.co/150x150.png",
     imageHint: "productivity coach male",
     websiteUrl: "#"
   }

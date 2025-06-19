@@ -13,7 +13,7 @@ const testimonials = [
     name: "Sarah L.",
     role: "Data Analyst",
     country: "USA",
-    imageUrl: "https://placehold.co/100x100/F5F5F5/BBBBBB.png",
+    imageUrl: "https://placehold.co/100x100.png",
     imageHint: "professional woman"
   },
   {
@@ -21,7 +21,7 @@ const testimonials = [
     name: "John B.",
     role: "Marketing Manager",
     country: "UK",
-    imageUrl: "https://placehold.co/100x100/EEEEEE/CCCCCC.png",
+    imageUrl: "https://placehold.co/100x100.png",
     imageHint: "professional man"
   },
   {
@@ -29,7 +29,7 @@ const testimonials = [
     name: "Emily K.",
     role: "Project Coordinator",
     country: "Canada",
-    imageUrl: "https://placehold.co/100x100/E9E9E9/DDDDDD.png",
+    imageUrl: "https://placehold.co/100x100.png",
     imageHint: "smiling person"
   },
    {
@@ -37,7 +37,7 @@ const testimonials = [
     name: "Michael P.",
     role: "Software Developer",
     country: "Australia",
-    imageUrl: "https://placehold.co/100x100/F0F0F0/D0D0D0.png",
+    imageUrl: "https://placehold.co/100x100.png",
     imageHint: "man software developer"
   }
 ];
