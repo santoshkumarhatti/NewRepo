@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AnimatedSection } from '@/components/shared/animated-section';
@@ -12,7 +13,7 @@ const testimonials = [
     name: "Sarah L.",
     role: "Data Analyst",
     country: "USA",
-    imageUrl: "https://placehold.co/100x100.png",
+    imageUrl: "https://placehold.co/100x100/F5F5F5/BBBBBB.png",
     imageHint: "professional woman"
   },
   {
@@ -20,7 +21,7 @@ const testimonials = [
     name: "John B.",
     role: "Marketing Manager",
     country: "UK",
-    imageUrl: "https://placehold.co/100x100.png",
+    imageUrl: "https://placehold.co/100x100/EEEEEE/CCCCCC.png",
     imageHint: "professional man"
   },
   {
@@ -28,7 +29,7 @@ const testimonials = [
     name: "Emily K.",
     role: "Project Coordinator",
     country: "Canada",
-    imageUrl: "https://placehold.co/100x100.png",
+    imageUrl: "https://placehold.co/100x100/E9E9E9/DDDDDD.png",
     imageHint: "smiling person"
   },
    {
@@ -36,7 +37,7 @@ const testimonials = [
     name: "Michael P.",
     role: "Software Developer",
     country: "Australia",
-    imageUrl: "https://placehold.co/100x100.png",
+    imageUrl: "https://placehold.co/100x100/F0F0F0/D0D0D0.png",
     imageHint: "man software developer"
   }
 ];
@@ -53,9 +54,9 @@ export function TestimonialsSection() {
           <ScrollArea className="w-full whitespace-nowrap pb-4">
             <div className="flex w-max space-x-6">
               {testimonials.map((testimonial, index) => (
-                 <AnimatedSection 
-                    key={index} 
-                    as="div" 
+                 <AnimatedSection
+                    key={index}
+                    as="div"
                     className="w-[350px] md:w-[400px]" // Card width
                     animation="fadeInUp"
                     delay={`delay-${index * 100}`}
