@@ -38,13 +38,19 @@ export default function CheckoutPage() {
                   </p>
                   <p className="text-sm text-muted-foreground text-center">
                     This is where your Razorpay integration would go. 
-                    Clicking the button below would typically initiate the payment process.
+                    Clicking the button below will take you to the payment page.
                   </p>
-                  <Button 
+                  <Button
+                    asChild
                     className="w-full bg-accent hover:bg-accent/80 text-accent-foreground"
-                    onClick={() => alert(`Initiating Razorpay payment for ${course.title} at $${course.price.toFixed(2)}`)}
                   >
-                    Proceed to Payment with Razorpay
+                    <a
+                      href="YOUR_RAZORPAY_PAYMENT_LINK_HERE" // Replace this with your actual Razorpay payment link
+                      target="_blank" // Opens the link in a new tab
+                      rel="noopener noreferrer" // Recommended for security when using target="_blank"
+                    >
+                      Proceed to Payment with Razorpay
+                    </a>
                   </Button>
                 </div>
               ) : (
