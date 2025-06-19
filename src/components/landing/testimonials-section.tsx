@@ -13,32 +13,24 @@ const testimonials = [
     name: "Sarah L.",
     role: "Data Analyst",
     country: "USA",
-    imageUrl: "https://placehold.co/100x100.png",
-    imageHint: "professional woman"
   },
   {
     quote: "The Digital Marketing bootcamp was incredibly comprehensive. I landed a promotion within 3 months of completing the course. Highly recommend!",
     name: "John B.",
     role: "Marketing Manager",
     country: "UK",
-    imageUrl: "https://placehold.co/100x100.png",
-    imageHint: "professional man"
   },
   {
     quote: "As a non-tech person, I was hesitant. But the instructors made complex topics easy to understand. I'm now confidently using new productivity tools.",
     name: "Emily K.",
     role: "Project Coordinator",
     country: "Canada",
-    imageUrl: "https://placehold.co/100x100.png",
-    imageHint: "smiling person"
   },
    {
     quote: "FutureProof Academy helped me pivot my career into tech. The job assistance and lifetime access to materials are fantastic perks.",
     name: "Michael P.",
     role: "Software Developer",
     country: "Australia",
-    imageUrl: "https://placehold.co/100x100.png",
-    imageHint: "man software developer"
   }
 ];
 
