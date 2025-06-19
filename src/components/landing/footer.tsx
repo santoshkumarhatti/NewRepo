@@ -37,7 +37,7 @@ export function Footer() {
         </div>
         <div className="border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} PrimeLeapInstitute. All rights reserved.
+            &copy; {currentYear} Prime Leap Institute. All rights reserved.
           </p>
         </div>
       </div>

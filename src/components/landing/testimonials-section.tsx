@@ -7,7 +7,7 @@ import { TestimonialCard } from './testimonial-card';
 
 const testimonials = [
   {
-    quote: "I felt stuck in my old job. PrimeLeapInstitute's AI course opened up a whole new career path for me. The mentorship was invaluable!",
+    quote: "I felt stuck in my old job. Prime Leap Institute's AI course opened up a whole new career path for me. The mentorship was invaluable!",
     name: "Sarah L.",
     role: "Data Analyst",
     country: "USA",
@@ -31,7 +31,7 @@ const testimonials = [
     imageHint: "smiling person"
   },
    {
-    quote: "PrimeLeapInstitute helped me pivot my career into tech. The job assistance and lifetime access to materials are fantastic perks.",
+    quote: "Prime Leap Institute helped me pivot my career into tech. The job assistance and lifetime access to materials are fantastic perks.",
     name: "Michael P.",
     role: "Software Developer",
     country: "Australia",
@@ -48,7 +48,7 @@ export function TestimonialsSection() {
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Success Stories from Our Students"
-          subtitle="Hear from professionals who transformed their careers with PrimeLeapInstitute."
+          subtitle="Hear from professionals who transformed their careers with Prime Leap Institute."
         />
         <div className="max-w-2xl mx-auto space-y-8">
           {displayedTestimonials.map((testimonial, index) => (

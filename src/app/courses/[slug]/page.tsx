@@ -23,12 +23,12 @@ export async function generateMetadata(
 
   if (!course) {
     return {
-      title: 'Course Not Found - PrimeLeapInstitute',
+      title: 'Course Not Found - Prime Leap Institute',
     }
   }
 
   return {
-    title: `${course.title} - PrimeLeapInstitute`,
+    title: `${course.title} - Prime Leap Institute`,
     description: course.description.substring(0, 160), 
   }
 }

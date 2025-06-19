@@ -29,7 +29,7 @@ export function HowItWorksSection() {
       <div className="container mx-auto px-4">
         <SectionTitle
           title="Simple Steps to Success"
-          subtitle="Getting started on your upskilling journey with PrimeLeapInstitute is easy. Follow these simple steps:"
+          subtitle="Getting started on your upskilling journey with Prime Leap Institute is easy. Follow these simple steps:"
         />
         <div className="relative grid md:grid-cols-3 gap-8 md:gap-4">
           {steps.map((step, index) => (
