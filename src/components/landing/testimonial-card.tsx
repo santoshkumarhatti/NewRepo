@@ -17,7 +17,7 @@ export function TestimonialCard({ quote, name, role, country, imageUrl, imageHin
     <Card className="h-full flex flex-col bg-card shadow-lg rounded-lg">
       <CardContent className="p-6 flex-grow"> 
         <Quote className="h-8 w-8 text-primary/50 mb-4" />
-        <p className="text-foreground italic text-sm line-clamp-3">
+        <p className="text-foreground text-sm line-clamp-2">
           {quote}
         </p>
       </CardContent>
