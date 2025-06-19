@@ -11,13 +11,21 @@ interface TestimonialCardProps {
 }
 
 export function TestimonialCard({ quote, name, role, country, imageUrl, imageHint }: TestimonialCardProps) {
+  const MAX_WORDS = 14;
+  const words = quote.split(' ');
+  let truncatedQuote = quote;
+
+  if (words.length > MAX_WORDS) {
+    truncatedQuote = words.slice(0, MAX_WORDS).join(' ') + '...';
+  }
+
   return (
-    <Card className="flex flex-col bg-card shadow-lg rounded-lg"> {/* Removed h-full */}
+    <Card className="flex flex-col bg-card shadow-lg rounded-lg">
       <CardContent className="p-6 flex-grow">
         <p
-          className="text-foreground text-sm line-clamp-3 mb-4"
+          className="text-foreground text-sm line-clamp-5 mb-4"
         >
-          {quote}
+          {truncatedQuote}
         </p>
       </CardContent>
       <CardFooter className="p-6 pt-4 mt-auto border-t border-border flex items-center space-x-4">
