@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { courses, getCourseBySlug } from '@/lib/courses';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { AlertTriangle } from 'lucide-react';
+import { AlertTriangle, Tag } from 'lucide-react';
 import Link from 'next/link';
 
 export default function CheckoutPage() {
@@ -32,16 +32,17 @@ export default function CheckoutPage() {
             <CardContent>
               {course ? (
                 <div className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Course Price: <span className="font-semibold text-foreground">$99.00</span> (Example Price)
+                  <p className="text-lg text-muted-foreground flex items-center justify-center">
+                    <Tag className="mr-2 h-5 w-5 text-accent" />
+                    Course Price: <span className="font-semibold text-foreground ml-1">${course.price.toFixed(2)}</span>
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground text-center">
                     This is where your Razorpay integration would go. 
                     Clicking the button below would typically initiate the payment process.
                   </p>
                   <Button 
                     className="w-full bg-accent hover:bg-accent/80 text-accent-foreground"
-                    onClick={() => alert(`Initiating Razorpay payment for ${course.title}`)}
+                    onClick={() => alert(`Initiating Razorpay payment for ${course.title} at $${course.price.toFixed(2)}`)}
                   >
                     Proceed to Payment with Razorpay
                   </Button>

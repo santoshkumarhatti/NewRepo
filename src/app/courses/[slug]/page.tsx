@@ -5,7 +5,7 @@ import { getCourseBySlug, Course } from '@/lib/courses';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Tag } from 'lucide-react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata, ResolvingMetadata } from 'next';
@@ -29,7 +29,7 @@ export async function generateMetadata(
 
   return {
     title: `${course.title} - FutureProof Academy`,
-    description: course.description.substring(0, 160), // Use a snippet for meta description
+    description: course.description.substring(0, 160), 
   }
 }
 
@@ -43,13 +43,13 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow pt-24 pb-16 bg-secondary"> {/* Added padding top */}
+      <main className="flex-grow pt-24 pb-16 bg-secondary"> 
         <div className="container mx-auto px-4">
           <article className="bg-background p-6 md:p-10 rounded-lg shadow-xl">
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="relative w-full aspect-video rounded-lg overflow-hidden shadow-md">
                 <Image
-                  src={course.imageUrl.replace('400x250', '800x450')} // Larger image for detail page
+                  src={course.imageUrl.replace('400x250', '800x450')} 
                   alt={course.title}
                   layout="fill"
                   objectFit="cover"
@@ -65,8 +65,10 @@ export default function CourseDetailPage({ params }: { params: { slug: string } 
                   {course.description}
                 </p>
                 
-                {/* Placeholder for more course details like modules, duration, price etc. */}
-                <div className="mb-8 space-y-2">
+                <div className="mb-8 space-y-3">
+                  <p className="text-xl font-semibold text-accent flex items-center">
+                    <Tag className="mr-2 h-6 w-6" /> Price: ${course.price.toFixed(2)}
+                  </p>
                   <p><span className="font-semibold">Duration:</span> 8 Weeks (Self-Paced)</p>
                   <p><span className="font-semibold">Skill Level:</span> All Levels</p>
                   <p><span className="font-semibold">Certificate:</span> Included</p>

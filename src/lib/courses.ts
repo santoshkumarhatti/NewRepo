@@ -6,7 +6,7 @@ export interface Course {
   category: string;
   imageUrl: string;
   imageHint: string;
-  // Add other relevant fields like instructor, price, modules, etc. if needed
+  price: number; 
 }
 
 export const courses: Course[] = [
@@ -17,6 +17,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "AI machine learning",
     category: "Artificial Intelligence",
+    price: 199,
   },
   {
     slug: "digital-marketing-pro-bootcamp",
@@ -25,6 +26,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "digital marketing computer",
     category: "Marketing",
+    price: 249,
   },
   {
     slug: "remote-work-productivity-mastery",
@@ -33,6 +35,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "remote work productivity",
     category: "Productivity",
+    price: 99,
   },
   {
     slug: "cybersecurity-essentials",
@@ -41,6 +44,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "cybersecurity shield",
     category: "Tech",
+    price: 299,
   },
   {
     slug: "data-science-business-decisions",
@@ -49,6 +53,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "data science chart",
     category: "Data Science",
+    price: 349,
   },
   {
     slug: "web-development-foundations",
@@ -57,6 +62,7 @@ export const courses: Course[] = [
     imageUrl: "https://placehold.co/400x250.png",
     imageHint: "web development code",
     category: "Development",
+    price: 149,
   }
 ];
 
