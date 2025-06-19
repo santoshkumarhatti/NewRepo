@@ -51,7 +51,6 @@ try {
 } catch (error) {
   console.error("Firebase initialization error:", error);
   // Handle cases where Firebase might already be initialized or config is missing
-  // In a real app, you might want to show an error to the user or disable Firebase-dependent features
 }
 
 
@@ -116,16 +115,14 @@ export default function CheckoutPage() {
 
     setIsProcessing(true);
 
-    const razorpayKeyId = 'rzp_live_eCTHZLuHrmbmE1'; 
-    const courseTitleText = course.title || 'Selected Course';
-    const courseDescriptionText = course.description || 'Quality online course';
+    const razorpayKeyId = 'rzp_live_eCTHZLuHrmbmE1'; // Replace with your actual Razorpay Key ID
     
     const razorpayOptions = {
       key: razorpayKeyId,
       amount: course.price * 100, 
-      currency: "USD",
-      name: courseTitleText,
-      description: `${courseDescriptionText.substring(0, 150)}${courseDescriptionText.length > 150 ? '...' : ''}`,
+      currency: "USD", // Currency set to USD
+      name: course.title, // Course title as the main name
+      description: `${course.description.substring(0, 150)}${course.description.length > 150 ? '...' : ''}`, // Course description
       image: "/logo-placeholder.png", // Replace with your actual logo URL
       handler: function (response: any) {
         const purchaseData = {
@@ -142,8 +139,8 @@ export default function CheckoutPage() {
           },
           payment: {
             paymentId: response.razorpay_payment_id,
-            orderId: response.razorpay_order_id, // May be undefined in client-only flow
-            signature: response.razorpay_signature, // May be undefined in client-only flow
+            orderId: response.razorpay_order_id,
+            signature: response.razorpay_signature,
           },
           purchaseDate: new Date().toISOString(),
         };
@@ -167,7 +164,7 @@ export default function CheckoutPage() {
         course_title: course.title,
       },
       theme: {
-        color: "#3F51B5", // Matches current primary theme color, adjust if needed
+        color: "#3F51B5", 
       },
     };
 
@@ -189,7 +186,6 @@ export default function CheckoutPage() {
         description: "Razorpay SDK not found. Please ensure it's loaded or try refreshing.",
         variant: "destructive",
       });
-      console.log("Conceptual Razorpay Checkout Options (SDK not loaded):", razorpayOptions);
       setIsProcessing(false);
     }
   };
@@ -261,7 +257,7 @@ export default function CheckoutPage() {
                   <Button
                     onClick={handlePayment}
                     className="w-full bg-accent hover:bg-accent/80 text-accent-foreground"
-                    disabled={isProcessing}
+                    disabled={isProcessing || !userName || !userEmail || !userPhone}
                   >
                     {isProcessing ? 'Processing...' : 'Proceed to Payment with Razorpay'}
                   </Button>
@@ -291,4 +287,3 @@ export default function CheckoutPage() {
     </div>
   );
 }
-
