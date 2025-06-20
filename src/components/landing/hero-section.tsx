@@ -10,7 +10,7 @@ export function HeroSection() {
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-[-2]">
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQvOMtMDRcZkBdELvHS4UpMlVbrMrPxnDsewRNiVlclJBGy3jCPQINUOPT&s=10"
           alt="AI in workplace and people learning online"
           layout="fill"
           objectFit="cover"
