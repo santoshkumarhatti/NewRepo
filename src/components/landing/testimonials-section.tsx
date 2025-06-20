@@ -62,11 +62,15 @@ export function TestimonialsSection() {
 
     const scrollContent = () => {
       if (!isHovering && container) {
-        if (container.scrollLeft >= container.scrollWidth - container.clientWidth -1) {
-          container.scrollLeft = 0;
-        } else {
+        // Check if we are NOT at the end (or very close to it, accounting for potential floating point inaccuracies)
+        // Ensure there's still room to scroll
+        if (container.scrollLeft < container.scrollWidth - container.clientWidth - scrollSpeed) {
           container.scrollLeft += scrollSpeed;
+        } else if (container.scrollLeft < container.scrollWidth - container.clientWidth) {
+          // If very close to the end, just scroll to the end to avoid overshooting slightly
+          container.scrollLeft = container.scrollWidth - container.clientWidth;
         }
+        // If at the end, do nothing to stop the scroll
       }
       animationFrameId = requestAnimationFrame(scrollContent);
     };
@@ -103,7 +107,7 @@ export function TestimonialsSection() {
           ref={scrollContainerRef}
           className="flex overflow-x-auto space-x-6 pb-4 no-scrollbar"
         >
-          {testimonials.map((testimonial, index) => (
+          {testimonials.slice(0, 4).map((testimonial, index) => (
              <AnimatedSection
                 key={index}
                 as="div"
