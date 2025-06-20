@@ -33,13 +33,13 @@ import { getDatabase, ref, push, set, type Database } from 'firebase/database';
 
 // Placeholder Firebase configuration (REPLACE WITH YOURS and use ENV VARS for production)
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  databaseURL: "YOUR_DATABASE_URL",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCpxJEcYTXPj_aDQSsmJYw8pnDQyGu4EAI",
+      authDomain: "ev-web-santu.firebaseapp.com",
+      databaseURL: "https://ev-web-santu-default-rtdb.firebaseio.com",
+      projectId: "ev-web-santu",
+      storageBucket: "ev-web-santu.appspot.com",
+      messagingSenderId: "ev-web-santu.appspot.com",
+      appId: "1:742291728709:web:ec4bcc85abc154898bf62c"
 };
 
 let app: FirebaseApp;
